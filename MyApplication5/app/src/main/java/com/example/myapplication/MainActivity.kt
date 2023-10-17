@@ -1,8 +1,8 @@
 package com.example.myapplication
 
 import android.os.Bundle
+import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
@@ -14,6 +14,7 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -27,15 +28,15 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.myapplication.ui.theme.MyApplicationTheme
 
-data class MataKuliah(val nama: String, val icon: Int, val sks: Int)
-
-class MainActivity : AppCompatActivity() {
+class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
             MyApplicationTheme {
                 // Panggil komponen Composable yang telah Anda buat
-                DaftarMataKuliah()
+                Surface {
+                    DaftarMataKuliah()
+                }
             }
         }
     }
